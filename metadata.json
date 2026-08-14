@@ -1,0 +1,6 @@
+{
+  "name": "Job Costing Dashboard",
+  "description": "Professional Job Costing and Electrical Quotation Management Application for Risha Vishal Electrical & Construction Co. Ltd.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
