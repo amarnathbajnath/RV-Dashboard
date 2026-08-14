@@ -2,7 +2,7 @@ name: Deploy SPA to GitHub Pages
 
 on:
   push:
-    branches: ['main'] # or 'master' if your default branch is master
+    branches: ['main', 'master']
   workflow_dispatch:
 
 permissions:
@@ -24,10 +24,10 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Setup Node.js 24
         uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 24
 
       - name: Install Dependencies
         run: npm install
