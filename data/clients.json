@@ -1,1 +1,20 @@
-[]
+[
+  {
+    "id": "client-1787587296300",
+    "name": "Dr. Rohit Dass",
+    "company": "Freeport Medical Centre",
+    "phone": "",
+    "email": "",
+    "address": "#105 Freeport Mission Road, Freeport.",
+    "notes": ""
+  },
+  {
+    "id": "client-1787587076603",
+    "name": "Mr. Stuart Spiers",
+    "company": "Stuart Spiers Real Estate Services Ltd.",
+    "phone": "+1 (868) 680-8095",
+    "email": "stuartaspiers@yahoo.com",
+    "address": "19A Agra Street, St. James.",
+    "notes": ""
+  }
+]
