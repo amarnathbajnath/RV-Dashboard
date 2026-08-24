@@ -1,7 +1,7 @@
 [
   {
     "id": "quote-1787586835366",
-    "quoteNo": "RV-INV-2026-08-24",
+    "quoteNo": "RV-Q-2026-020",
     "customer": "Dr. Rohit Dass",
     "clientCompany": "Freeport Medical Centre",
     "address": "#105 Freeport Mission Road, Freeport.",
@@ -166,6 +166,6 @@
     "markupPct": 27.5,
     "vatPct": 12.5,
     "createdAt": "2026-08-24T15:53:55.366Z",
-    "updatedAt": "2026-08-24T17:08:08.518Z"
+    "updatedAt": "2026-08-24T17:09:21.628Z"
   }
 ]
