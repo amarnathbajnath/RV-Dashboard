@@ -9,7 +9,7 @@
     "validUntil": "2026-09-23",
     "status": "draft",
     "scopeDescription": "Electrical Installation Works – Oxygen Pump Supply\n\nElectrical Supply Installation\nSupply and install a 230V electrical supply from the existing three-phase distribution panel upstairs to provide power for the downstairs oxygen pump.\nInstall a toggle switch upstairs to control the oxygen pump.\nSupply and install PVC trunking from the distribution panel to the drop ceiling.\nSupply and install trunking from the pilot light switch location to the ceiling.\nSupply and install ECC wire from the distribution panel, through the drop ceiling, to the pilot light switch.\nDrill through the wall as required to facilitate routing of the electrical supply from the pilot light switch to the downstairs outlet.\nSupply and install conduit from the upstairs level to the downstairs outlet.\nPull and install the required wiring through the conduit.\n\nTermination and Connections\nTerminate conductors at the distribution panel.\nMake up and connect the pilot light switch.\nMake up and connect the downstairs power outlet.\nDownsize existing breaker(s) within the distribution panel as required to create space for the new circuit.\nSupply and install 1 × 30A/30A Quad Duplex breaker to accommodate the new electrical supply.\n\n\n",
-    "internalNotes": "",
+    "internalNotes": "Supplying Labour Only.",
     "sections": [
       {
         "id": "sec-1787586835366",
@@ -156,16 +156,16 @@
       }
     ],
     "labourConfig": {
-      "labourCost": 0,
+      "labourCost": 700,
       "inspectionCost": 0,
       "hourlyRate": 65,
-      "estimatedHours": 0,
-      "crewSize": 1,
+      "estimatedHours": 8,
+      "crewSize": 2,
       "transportCost": 0
     },
-    "markupPct": 15,
+    "markupPct": 27.5,
     "vatPct": 12.5,
     "createdAt": "2026-08-24T15:53:55.366Z",
-    "updatedAt": "2026-08-24T16:51:28.072Z"
+    "updatedAt": "2026-08-24T17:08:08.518Z"
   }
 ]
