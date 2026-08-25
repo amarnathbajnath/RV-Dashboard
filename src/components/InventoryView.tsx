@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useRef, useState } from 'react';
 import { AppSettings, MaterialItem } from '../types';
 import { formatCurrency } from '../utils/calculations';
 import { Check, Filter, Package, Plus, RefreshCw, Search } from 'lucide-react';
@@ -25,6 +25,7 @@ export const InventoryView: React.FC<InventoryViewProps> = ({
   const [addingQtyForSku, setAddingQtyForSku] = useState<string | null>(null);
   const [qtyInput, setQtyInput] = useState<number>(1);
   const [showAddCustomModal, setShowAddCustomModal] = useState(false);
+  const searchInputRef = useRef<HTMLInputElement>(null);
 
   // New Custom Material Form State
   const [newItemSku, setNewItemSku] = useState('');
@@ -61,6 +62,10 @@ export const InventoryView: React.FC<InventoryViewProps> = ({
     onAddItemToActiveQuote(item, qtyInput);
     setAddingQtyForSku(null);
     setQtyInput(1);
+    setSearchTerm('');
+    setTimeout(() => {
+      searchInputRef.current?.focus();
+    }, 0);
   };
 
   const handleCreateCatalogItem = (e: React.FormEvent) => {
@@ -126,6 +131,7 @@ export const InventoryView: React.FC<InventoryViewProps> = ({
           <div className="relative flex-1">
             <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
             <input
+              ref={searchInputRef}
               type="text"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}

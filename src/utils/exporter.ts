@@ -108,7 +108,7 @@ export function generateQuotePDF(quote: Quote, settings: AppSettings): void {
   const customer = quote.customer || 'Commercial Client';
   const company = quote.clientCompany || '';
   const address = quote.address || 'Trinidad & Tobago';
-  const quoteNo = quote.quoteNo || 'QT-DRAFT';
+  const quoteNo = quote.quoteNo || 'RV-Q-2026-020';
   const currency = settings.currencySymbol || '$';
 
   const dateFmt = quote.date
@@ -181,7 +181,7 @@ export function generateQuotePDF(quote: Quote, settings: AppSettings): void {
   doc.setFontSize(8);
   doc.setFont('helvetica', 'normal');
   doc.setTextColor(180, 185, 210);
-  doc.text(settings.companySubtitle || 'Commercial & Industrial Electrical Contracting', ML + 16, 19);
+  doc.text(settings.companySubtitle || 'Domestic, Commercial & Industrial Electrical Contractor', ML + 16, 19);
   doc.text(`${settings.companyAddress} | Tel: ${settings.companyPhone}`, ML + 16, 24);
 
   // Quote info on top right
@@ -220,7 +220,7 @@ export function generateQuotePDF(quote: Quote, settings: AppSettings): void {
   doc.text(address, ML + 80, y + 11);
 
   doc.text(`Tax ID: ${settings.taxRegistrationNumber}`, ML + 140, y + 11);
-  doc.text(`Valid for: 30 Days`, ML + 140, y + 16);
+  doc.text(`Valid for: 14 Days`, ML + 140, y + 16);
 
   y += 26;
 
@@ -366,7 +366,7 @@ export function generateQuotePDF(quote: Quote, settings: AppSettings): void {
 
   renderSummaryLine('Materials Subtotal:', `${currency}${financials.materialsSubtotal.toFixed(2)}`);
   renderSummaryLine(`Markup (${quote.markupPct}%):`, `${currency}${financials.markupAmount.toFixed(2)}`);
-  renderSummaryLine(`VAT (${quote.vatPct}% on mat+markup):`, `${currency}${financials.vatAmount.toFixed(2)}`);
+  renderSummaryLine(`VAT (${quote.vatPct}%):`, `${currency}${financials.vatAmount.toFixed(2)}`);
   renderSummaryLine('Labour Cost:', `${currency}${financials.labourTotal.toFixed(2)}`);
   if (financials.inspectionTotal > 0) {
     renderSummaryLine('Inspection Certificate:', `${currency}${financials.inspectionTotal.toFixed(2)}`);
