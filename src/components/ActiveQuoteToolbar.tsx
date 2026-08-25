@@ -74,22 +74,23 @@ export const ActiveQuoteToolbar: React.FC<ActiveQuoteToolbarProps> = ({
               type="button"
               onClick={onSaveJSON}
               disabled={!activeQuote}
-              title={activeQuote ? 'Download current quote as JSON backup' : 'Select a quote first'}
+              title={activeQuote ? `Download ${activeQuote.quoteNo || 'Quote'} as a standalone JSON file` : 'Select a quote first'}
               className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#161B29] border border-[#2B354E] hover:border-[#3D4B6E] disabled:opacity-40 disabled:cursor-not-allowed text-slate-200 hover:text-white text-xs font-semibold transition-all"
             >
               <Download className="w-3.5 h-3.5 text-[#c0c1ff]" />
-              <span>Download Job</span>
+              <span>Download Quote JSON</span>
             </button>
 
             <label
-              title="Load saved job JSON file"
+              title="Load one or more Quote JSON files into the app"
               className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#161B29] border border-[#2B354E] hover:border-[#3D4B6E] text-slate-200 hover:text-white text-xs font-semibold transition-all cursor-pointer"
             >
               <Upload className="w-3.5 h-3.5 text-[#c0c1ff]" />
-              <span>Load Job</span>
+              <span>Load Quote JSON(s)</span>
               <input
                 type="file"
                 accept=".json"
+                multiple
                 onChange={onLoadJSON}
                 className="hidden"
               />

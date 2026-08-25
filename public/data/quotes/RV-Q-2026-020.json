@@ -1,0 +1,169 @@
+{
+  "id": "quote-1787586835366",
+  "quoteNo": "RV-Q-2026-020",
+  "customer": "Dr. Rohit Dass",
+  "clientCompany": "Freeport Medical Centre",
+  "address": "#105 Freeport Mission Road, Freeport.",
+  "date": "2026-08-24",
+  "validUntil": "2026-09-23",
+  "status": "draft",
+  "scopeDescription": "Electrical Installation Works – Oxygen Pump Supply\n\nElectrical Supply Installation\nSupply and install a 230V electrical supply from the existing three-phase distribution panel upstairs to provide power for the downstairs oxygen pump.\nInstall a toggle switch upstairs to control the oxygen pump.\nSupply and install PVC trunking from the distribution panel to the drop ceiling.\nSupply and install trunking from the pilot light switch location to the ceiling.\nSupply and install ECC wire from the distribution panel, through the drop ceiling, to the pilot light switch.\nDrill through the wall as required to facilitate routing of the electrical supply from the pilot light switch to the downstairs outlet.\nSupply and install conduit from the upstairs level to the downstairs outlet.\nPull and install the required wiring through the conduit.\n\nTermination and Connections\nTerminate conductors at the distribution panel.\nMake up and connect the pilot light switch.\nMake up and connect the downstairs power outlet.\nDownsize existing breaker(s) within the distribution panel as required to create space for the new circuit.\nSupply and install 1 × 30A/30A Quad Duplex breaker to accommodate the new electrical supply.\n\n\n",
+  "internalNotes": "Supplying Labour Only.",
+  "sections": [
+    {
+      "id": "sec-1787586835366",
+      "title": "General Materials",
+      "scope": "",
+      "materials": [
+        {
+          "id": "item-1787589962158-0.8864578841115384",
+          "SKU": "WIR-023",
+          "Item": "4.0mm² ECC wire - M.E.",
+          "Unit": "m",
+          "Qty": 30,
+          "Price": 16.71,
+          "category": "4. Building Wires & Grounding Cables"
+        },
+        {
+          "id": "item-1787589984653-0.031922507319843696",
+          "SKU": "DEV-023",
+          "Item": "30A 220V pilot light toggle switch",
+          "Unit": "each",
+          "Qty": 1,
+          "Price": 94,
+          "category": "9. Wiring Devices"
+        },
+        {
+          "id": "item-1787590037272-0.6310406238227207",
+          "SKU": "DEV-024",
+          "Item": "30A 220V Plug outlet 4-pin",
+          "Unit": "each",
+          "Qty": 1,
+          "Price": 55,
+          "category": "9. Wiring Devices"
+        },
+        {
+          "id": "item-1787590059103-0.5069180903806498",
+          "SKU": "CON-017",
+          "Item": "3/4\" PVC conduit",
+          "Unit": "length",
+          "Qty": 4,
+          "Price": 7.95,
+          "category": "7. Conduit & Raceway"
+        },
+        {
+          "id": "item-1787590091631-0.985631843259758",
+          "SKU": "CON-019",
+          "Item": "3/4\" PVC ends",
+          "Unit": "each",
+          "Qty": 10,
+          "Price": 0.85,
+          "category": "7. Conduit & Raceway"
+        },
+        {
+          "id": "item-1787590113330-0.4922657880359811",
+          "SKU": "CON-018",
+          "Item": "3/4\" PVC couplings",
+          "Unit": "each",
+          "Qty": 6,
+          "Price": 0.5,
+          "category": "7. Conduit & Raceway"
+        },
+        {
+          "id": "item-1787590167202-0.17507003759485462",
+          "SKU": "CON-015",
+          "Item": "3/4\" EMT clamps",
+          "Unit": "each",
+          "Qty": 20,
+          "Price": 0.45,
+          "category": "7. Conduit & Raceway"
+        },
+        {
+          "id": "item-1787590189356-0.6148180334631399",
+          "SKU": "HDW-026",
+          "Item": "Green rawl plugs",
+          "Unit": "each",
+          "Qty": 50,
+          "Price": 0.15,
+          "category": "10. Hardware & Consumables"
+        },
+        {
+          "id": "item-1787590203018-0.7953718110995235",
+          "SKU": "HDW-013",
+          "Item": "1x10 self-thread screws",
+          "Unit": "each",
+          "Qty": 50,
+          "Price": 0.2,
+          "category": "10. Hardware & Consumables"
+        },
+        {
+          "id": "item-1787590215396-0.24483625028591138",
+          "SKU": "BOX-022",
+          "Item": "4x4 PVC cans",
+          "Unit": "each",
+          "Qty": 4,
+          "Price": 4.75,
+          "category": "8. Boxes & Enclosures"
+        },
+        {
+          "id": "item-1787590233909-0.59472810249124",
+          "SKU": "BOX-021",
+          "Item": "4x4 PVC blank cover",
+          "Unit": "each",
+          "Qty": 3,
+          "Price": 2.95,
+          "category": "8. Boxes & Enclosures"
+        },
+        {
+          "id": "item-1787590241146-0.36670776955873163",
+          "SKU": "BOX-023",
+          "Item": "4x4 Single device covers",
+          "Unit": "each",
+          "Qty": 1,
+          "Price": 3.6,
+          "category": "8. Boxes & Enclosures"
+        },
+        {
+          "id": "item-1787590265346-0.7426949520501414",
+          "SKU": "CON-020",
+          "Item": "3/4\" x1\" PVC trunking (YT2) - V.E.",
+          "Unit": "length",
+          "Qty": 2,
+          "Price": 17.44,
+          "category": "7. Conduit & Raceway"
+        },
+        {
+          "id": "item-1787590279938-0.2408894418197144",
+          "SKU": "BOX-031",
+          "Item": "2x4 PVC trunking box - Voltron",
+          "Unit": "each",
+          "Qty": 1,
+          "Price": 18,
+          "category": "8. Boxes & Enclosures"
+        },
+        {
+          "id": "item-1787590288072-0.7679510045327346",
+          "SKU": "CON-022",
+          "Item": "3/4\" x 1/2\" trunking ends - V.E.",
+          "Unit": "each",
+          "Qty": 1,
+          "Price": 4.53,
+          "category": "7. Conduit & Raceway"
+        }
+      ],
+      "tmpItems": []
+    }
+  ],
+  "labourConfig": {
+    "labourCost": 700,
+    "inspectionCost": 0,
+    "hourlyRate": 65,
+    "estimatedHours": 8,
+    "crewSize": 2,
+    "transportCost": 0
+  },
+  "markupPct": 27.5,
+  "vatPct": 12.5,
+  "createdAt": "2026-08-24T15:53:55.366Z",
+  "updatedAt": "2026-08-24T17:09:21.628Z"
+}

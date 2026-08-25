@@ -1,6 +1,15 @@
 import { Client, GitHubSyncConfig, GitHubSyncResult, Quote } from '../types';
 
 /**
+ * Sanitizes quote number or ID for safe file naming in GitHub repo
+ */
+export function getQuoteFileName(quote: Quote): string {
+  const raw = (quote.quoteNo && quote.quoteNo.trim()) || quote.id;
+  const safe = raw.replace(/[^a-zA-Z0-9_\-\.]/g, '_');
+  return `${safe}.json`;
+}
+
+/**
  * Encodes string to UTF-8 safe Base64
  */
 function encodeBase64Unicode(str: string): string {
@@ -218,7 +227,38 @@ export async function saveFileToGitHub(
 }
 
 /**
- * Push all local Quotes and Clients to GitHub repository
+ * Saves a single quote as an individual JSON file in data/quotes/<quoteNo>.json
+ */
+export async function pushSingleQuoteToGitHub(
+  config: GitHubSyncConfig,
+  quote: Quote
+): Promise<{ success: boolean; message: string }> {
+  if (!config.token || !config.owner || !config.repo) {
+    return {
+      success: false,
+      message: 'GitHub credentials are not configured.',
+    };
+  }
+
+  const fileName = getQuoteFileName(quote);
+  const filePath = `data/quotes/${fileName}`;
+  const nowStr = new Date().toLocaleString();
+
+  const res = await saveFileToGitHub(
+    config,
+    filePath,
+    quote,
+    `Update quote ${quote.quoteNo || quote.id} (${quote.customer || 'Customer'}) - ${nowStr}`
+  );
+
+  return {
+    success: res.success,
+    message: res.success ? `Saved separate JSON file: ${filePath}` : res.message,
+  };
+}
+
+/**
+ * Push all local Quotes (as separate JSON files in data/quotes/) and Clients to GitHub repository
  */
 export async function pushAllToGitHub(
   config: GitHubSyncConfig,
@@ -232,31 +272,45 @@ export async function pushAllToGitHub(
     };
   }
 
-  const quotesPath = config.quotesPath || 'data/quotes.json';
-  const clientsPath = config.clientsPath || 'data/clients.json';
   const nowStr = new Date().toLocaleString();
+  let savedQuotesCount = 0;
+  let failedQuotesCount = 0;
 
-  // 1. Push Quotes
-  const quotesRes = await saveFileToGitHub(
-    config,
-    quotesPath,
-    quotes,
-    `Update quotes (${quotes.length} quotes) via Job Costing App - ${nowStr}`
-  );
+  // 1. Push each Quote as a separate JSON file in data/quotes/
+  for (const quote of quotes) {
+    const fileName = getQuoteFileName(quote);
+    const quoteFilePath = `data/quotes/${fileName}`;
+    const res = await saveFileToGitHub(
+      config,
+      quoteFilePath,
+      quote,
+      `Sync quote ${quote.quoteNo || quote.id} (${quote.customer || 'Draft'}) - ${nowStr}`
+    );
 
-  if (!quotesRes.success) {
-    return {
-      success: false,
-      message: `Error pushing quotes: ${quotesRes.message}`,
-    };
+    if (res.success) {
+      savedQuotesCount++;
+    } else {
+      failedQuotesCount++;
+      console.warn(`Failed to push quote ${fileName}:`, res.message);
+    }
   }
 
-  // 2. Push Clients
+  // 2. Also push data/quotes.json (combined index) for instant lookup
+  const quotesIndexPath = config.quotesPath || 'data/quotes.json';
+  await saveFileToGitHub(
+    config,
+    quotesIndexPath,
+    quotes,
+    `Update quotes index (${quotes.length} quotes) - ${nowStr}`
+  );
+
+  // 3. Push Clients to data/clients.json
+  const clientsPath = config.clientsPath || 'data/clients.json';
   const clientsRes = await saveFileToGitHub(
     config,
     clientsPath,
     clients,
-    `Update clients (${clients.length} clients) via Job Costing App - ${nowStr}`
+    `Update clients (${clients.length} clients) - ${nowStr}`
   );
 
   if (!clientsRes.success) {
@@ -268,7 +322,7 @@ export async function pushAllToGitHub(
 
   return {
     success: true,
-    message: `Pushed ${quotes.length} quotes and ${clients.length} clients to GitHub repository (${config.owner}/${config.repo}).`,
+    message: `Pushed ${savedQuotesCount} separate quote JSON file${savedQuotesCount !== 1 ? 's' : ''} to data/quotes/ and synced ${clients.length} clients in GitHub (${config.owner}/${config.repo}).`,
     timestamp: new Date().toISOString(),
     quotesCount: quotes.length,
     clientsCount: clients.length,
@@ -276,7 +330,7 @@ export async function pushAllToGitHub(
 }
 
 /**
- * Pull Quotes and Clients from GitHub repository
+ * Pull Quotes (from individual data/quotes/*.json files or quotes.json) and Clients from GitHub repository
  */
 export async function pullAllFromGitHub(
   config: GitHubSyncConfig
@@ -294,33 +348,60 @@ export async function pullAllFromGitHub(
     };
   }
 
-  const quotesPath = config.quotesPath || 'data/quotes.json';
+  const owner = config.owner.trim();
+  const repo = config.repo.trim();
+  const branch = (config.branch || 'main').trim();
   const clientsPath = config.clientsPath || 'data/clients.json';
 
   try {
-    // 1. Fetch Quotes
-    const quotesRes = await getFileFromGitHub<Quote[]>(config, quotesPath);
-    // 2. Fetch Clients
-    const clientsRes = await getFileFromGitHub<Client[]>(config, clientsPath);
-
     let loadedQuotes: Quote[] = [];
-    let loadedClients: Client[] = [];
 
-    if (quotesRes.exists && Array.isArray(quotesRes.data)) {
-      loadedQuotes = quotesRes.data;
-    } else if (quotesRes.exists && quotesRes.error) {
-      return { success: false, message: `Failed to load quotes: ${quotesRes.error}` };
+    // 1. Try reading the data/quotes/ directory to load all separate quote JSON files
+    try {
+      const folderRes = await fetch(
+        `https://api.github.com/repos/${owner}/${repo}/contents/data/quotes?ref=${branch}`,
+        { headers: getHeaders(config.token) }
+      );
+
+      if (folderRes.ok) {
+        const folderItems = await folderRes.json();
+        if (Array.isArray(folderItems) && folderItems.length > 0) {
+          const jsonFiles = folderItems.filter(
+            (item: any) => item.type === 'file' && item.name.endsWith('.json')
+          );
+
+          for (const fileItem of jsonFiles) {
+            const singleFileRes = await getFileFromGitHub<Quote>(config, fileItem.path);
+            if (singleFileRes.exists && singleFileRes.data && (singleFileRes.data.id || singleFileRes.data.quoteNo)) {
+              loadedQuotes.push(singleFileRes.data);
+            }
+          }
+        }
+      }
+    } catch (e) {
+      console.warn('Error reading data/quotes directory:', e);
     }
+
+    // 2. If data/quotes folder had no files or failed, fall back to data/quotes.json
+    if (loadedQuotes.length === 0) {
+      const quotesPath = config.quotesPath || 'data/quotes.json';
+      const quotesRes = await getFileFromGitHub<Quote[]>(config, quotesPath);
+      if (quotesRes.exists && Array.isArray(quotesRes.data)) {
+        loadedQuotes = quotesRes.data;
+      }
+    }
+
+    // 3. Fetch Clients
+    const clientsRes = await getFileFromGitHub<Client[]>(config, clientsPath);
+    let loadedClients: Client[] = [];
 
     if (clientsRes.exists && Array.isArray(clientsRes.data)) {
       loadedClients = clientsRes.data;
-    } else if (clientsRes.exists && clientsRes.error) {
-      return { success: false, message: `Failed to load clients: ${clientsRes.error}` };
     }
 
     return {
       success: true,
-      message: `Loaded ${loadedQuotes.length} quotes and ${loadedClients.length} clients from GitHub.`,
+      message: `Loaded ${loadedQuotes.length} quotes from separate JSON files and ${loadedClients.length} clients from GitHub.`,
       quotes: loadedQuotes,
       clients: loadedClients,
       timestamp: new Date().toISOString(),

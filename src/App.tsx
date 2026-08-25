@@ -4,7 +4,7 @@ import { ActiveTab, AppSettings, Client, GitHubSyncConfig, MaterialItem, Quote, 
 import { DEFAULT_CLIENTS, DEFAULT_INVENTORY, DEFAULT_SETTINGS, INITIAL_QUOTES } from './utils/defaultData';
 import { calculateQuoteFinancials, generateQuoteNumber, generateTmpSku } from './utils/calculations';
 import { exportQuoteCSV, generateQuotePDF, parseCSVToMaterials } from './utils/exporter';
-import { pullAllFromGitHub, pushAllToGitHub } from './utils/githubSync';
+import { pullAllFromGitHub, pushAllToGitHub, pushSingleQuoteToGitHub, getQuoteFileName } from './utils/githubSync';
 import { Navbar } from './components/Navbar';
 import { ActiveQuoteToolbar } from './components/ActiveQuoteToolbar';
 import { JobView } from './components/JobView';
@@ -23,7 +23,7 @@ const DEFAULT_GITHUB_CONFIG: GitHubSyncConfig = {
   owner: '',
   repo: '',
   branch: 'main',
-  quotesPath: 'data/quotes.json',
+  quotesPath: 'data/quotes/',
   clientsPath: 'data/clients.json',
   autoSyncOnSave: false,
   lastSyncedAt: undefined,
@@ -602,22 +602,16 @@ export default function App() {
     }
   };
 
-  // JSON Save / Download
+  // JSON Save / Download active quote as separate JSON file
   const handleSaveJSON = () => {
     if (!activeQuote) {
       addToast('error', 'No active quote selected to download.');
       return;
     }
-    const exportState = {
-      version: 2,
-      savedAt: new Date().toISOString(),
-      activeQuote,
-      settings,
-    };
-    const blob = new Blob([JSON.stringify(exportState, null, 2)], {
+    const filename = `${getQuoteFileName(activeQuote)}`;
+    const blob = new Blob([JSON.stringify(activeQuote, null, 2)], {
       type: 'application/json;charset=utf-8;',
     });
-    const filename = `Job_${(activeQuote.customer || 'Quote').replace(/[^a-zA-Z0-9]/g, '_')}_${activeQuote.quoteNo || 'RV'}.json`;
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
@@ -626,69 +620,129 @@ export default function App() {
     a.click();
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
-    addToast('success', `Downloaded backup: ${filename}`);
+    addToast('success', `Downloaded quote JSON file: ${filename}`);
   };
 
-  // JSON Load
-  const handleLoadJSON = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
+  // JSON Load (Single or Multiple Quote JSON files)
+  const handleLoadJSON = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files: File[] = e.target.files ? Array.from(e.target.files) : [];
+    if (files.length === 0) return;
     e.target.value = ''; // allow reloading same file
 
-    const reader = new FileReader();
-    reader.onload = (event) => {
-      try {
-        const raw = event.target?.result as string;
-        const parsed = JSON.parse(raw);
+    const parsedQuotesList: Quote[] = [];
+    const readErrors: string[] = [];
 
-        // Support both old structure and new structure
-        if (parsed.version === 1 && parsed.jobs) {
-          // Convert legacy format
-          const importedQuote: Quote = {
-            id: `quote-${Date.now()}`,
-            quoteNo: parsed.quoteNo || generateQuoteNumber(quotes),
-            customer: parsed.customer || 'Imported Job',
-            address: parsed.address || '',
-            date: parsed.date || new Date().toISOString().split('T')[0],
-            status: 'draft',
-            scopeDescription: parsed.notes || '',
-            internalNotes: parsed.notes || '',
-            sections: parsed.jobs.map((j: any, idx: number) => ({
-              id: `sec-${idx}`,
-              title: `Section ${idx + 1}`,
-              scope: j.scope || '',
-              materials: j.addedItems || [],
-              tmpItems: j.tmpItems || [],
-            })),
-            labourConfig: {
-              labourCost: parseFloat(parsed.labour) || 0,
-              inspectionCost: parseFloat(parsed.inspection) || 0,
-            },
-            markupPct: parseFloat(parsed.markupPct) || 15.0,
-            vatPct: parseFloat(parsed.vatPct) || 12.5,
-            createdAt: new Date().toISOString(),
-            updatedAt: new Date().toISOString(),
-          };
+    const readFileAsync = (file: File): Promise<void> => {
+      return new Promise((resolve) => {
+        const reader = new FileReader();
+        reader.onload = (event) => {
+          try {
+            const raw = event.target?.result as string;
+            const parsed = JSON.parse(raw);
 
-          setQuotes((prev) => [importedQuote, ...prev]);
-          setActiveQuoteId(importedQuote.id);
-          addToast('success', `Imported legacy job: ${importedQuote.customer}`);
-        } else if (parsed.activeQuote) {
-          const imported = {
-            ...parsed.activeQuote,
-            id: `quote-${Date.now()}`,
-          };
-          setQuotes((prev) => [imported, ...prev]);
-          setActiveQuoteId(imported.id);
-          addToast('success', `Imported quote: ${imported.quoteNo}`);
-        } else {
-          throw new Error('Unrecognized JSON format');
-        }
-      } catch (err: any) {
-        addToast('error', `Failed to load JSON: ${err.message}`);
-      }
+            if (Array.isArray(parsed)) {
+              // Array of quotes (e.g. quotes.json)
+              parsed.forEach((q) => {
+                if (q && (q.id || q.quoteNo)) {
+                  parsedQuotesList.push(q);
+                }
+              });
+            } else if (parsed.id || parsed.quoteNo || parsed.sections) {
+              // Direct individual quote JSON file
+              parsedQuotesList.push(parsed as Quote);
+            } else if (parsed.activeQuote) {
+              // Wrapped structure
+              parsedQuotesList.push(parsed.activeQuote as Quote);
+            } else if (parsed.version === 1 && parsed.jobs) {
+              // Convert legacy format
+              const importedQuote: Quote = {
+                id: `quote-${Date.now()}-${Math.random()}`,
+                quoteNo: parsed.quoteNo || generateQuoteNumber(quotes),
+                customer: parsed.customer || file.name.replace(/\.json$/i, ''),
+                clientCompany: '',
+                address: parsed.address || '',
+                date: parsed.date || new Date().toISOString().split('T')[0],
+                validUntil: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
+                status: 'draft',
+                scopeDescription: parsed.notes || '',
+                internalNotes: parsed.notes || '',
+                sections: parsed.jobs.map((j: any, idx: number) => ({
+                  id: `sec-${idx}`,
+                  title: `Section ${idx + 1}`,
+                  scope: j.scope || '',
+                  materials: j.addedItems || [],
+                  tmpItems: j.tmpItems || [],
+                })),
+                labourConfig: {
+                  labourCost: parseFloat(parsed.labour) || 0,
+                  inspectionCost: parseFloat(parsed.inspection) || 0,
+                  hourlyRate: 150,
+                  estimatedHours: 0,
+                  crewSize: 1,
+                  transportCost: 0,
+                },
+                markupPct: parseFloat(parsed.markupPct) || 15.0,
+                vatPct: parseFloat(parsed.vatPct) || 12.5,
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString(),
+              };
+              parsedQuotesList.push(importedQuote);
+            } else {
+              readErrors.push(`${file.name}: Unrecognized JSON format`);
+            }
+          } catch (err: any) {
+            readErrors.push(`${file.name}: ${err.message}`);
+          }
+          resolve();
+        };
+        reader.onerror = () => {
+          readErrors.push(`${file.name}: Failed to read file`);
+          resolve();
+        };
+        reader.readAsText(file);
+      });
     };
-    reader.readAsText(file);
+
+    await Promise.all(files.map((f) => readFileAsync(f)));
+
+    if (parsedQuotesList.length > 0) {
+      setQuotes((prev) => {
+        // Merge or replace by ID or quoteNo
+        const updated = [...prev];
+        parsedQuotesList.forEach((newQ) => {
+          const matchIdx = updated.findIndex(
+            (existing) =>
+              (newQ.id && existing.id === newQ.id) ||
+              (newQ.quoteNo && existing.quoteNo === newQ.quoteNo)
+          );
+          if (matchIdx >= 0) {
+            updated[matchIdx] = { ...updated[matchIdx], ...newQ };
+          } else {
+            updated.unshift(newQ);
+          }
+        });
+        return updated;
+      });
+
+      // Activate the first loaded quote
+      const firstLoaded = parsedQuotesList[0];
+      if (firstLoaded.id) {
+        setActiveQuoteId(firstLoaded.id);
+      }
+
+      addToast(
+        'success',
+        `Successfully loaded ${parsedQuotesList.length} quote JSON file${
+          parsedQuotesList.length > 1 ? 's' : ''
+        }: ${parsedQuotesList.map((q) => q.quoteNo || q.customer || 'Quote').slice(0, 3).join(', ')}${
+          parsedQuotesList.length > 3 ? '...' : ''
+        }`
+      );
+    }
+
+    if (readErrors.length > 0) {
+      addToast('error', `Error loading files: ${readErrors.join('; ')}`);
+    }
   };
 
   // Client Selection Handler

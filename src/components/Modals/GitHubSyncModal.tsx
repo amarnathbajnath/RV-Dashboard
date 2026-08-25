@@ -100,11 +100,11 @@ export const GitHubSyncModal: React.FC<GitHubSyncModalProps> = ({
               <h3 className="text-base sm:text-lg font-bold text-slate-100 uppercase tracking-wider flex items-center gap-2">
                 <span>GitHub Cloud Sync</span>
                 <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#1A2238] border border-[#2D3958] text-[#c0c1ff] font-mono lowercase">
-                  JSON repository backup
+                  Separate JSON Files
                 </span>
               </h3>
               <p className="text-xs text-slate-400">
-                Save and sync your quotes and clients directly to your GitHub repository.
+                Quotes are saved as individual JSON files in <code className="text-[#c0c1ff] font-mono">data/quotes/*.json</code>.
               </p>
             </div>
           </div>
