@@ -1,0 +1,98 @@
+{
+  "id": "quote-1788970259842",
+  "quoteNo": "RV-Q-2026-022",
+  "customer": "Mr. Roger",
+  "clientCompany": "",
+  "address": "Roystonia",
+  "date": "2026-09-09",
+  "validUntil": "2026-10-09",
+  "status": "draft",
+  "scopeDescription": "To run the power to a battery charger.\nTo replace 2 - 50A d/p full size breakers with 50A - d/p half-size breakers.\nTo replace 1 - 30A full size breaker with a 30A half-size breaker.\nTo install 1 - 60A d/p full-size breaker.",
+  "internalNotes": "",
+  "sections": [
+    {
+      "id": "sec-1788970259842",
+      "title": "General Materials",
+      "scope": "",
+      "materials": [
+        {
+          "id": "item-1788970730926-0.47402124958266423",
+          "SKU": "WIR-003",
+          "Item": "10mm² s/s wire",
+          "Unit": "m",
+          "Qty": 49,
+          "Price": 13.83,
+          "category": "4. Building Wires & Grounding Cables"
+        },
+        {
+          "id": "item-1788970821249-0.07700638586523978",
+          "SKU": "DST-051",
+          "Item": "50A double-pole breaker (1/2)",
+          "Unit": "each",
+          "Qty": 2,
+          "Price": 129,
+          "category": "2. Distribution Equipment"
+        },
+        {
+          "id": "item-1788970831381-0.34710881548239103",
+          "SKU": "DST-041",
+          "Item": "30A double-pole breaker (1/2)",
+          "Unit": "each",
+          "Qty": 1,
+          "Price": 101,
+          "category": "2. Distribution Equipment"
+        },
+        {
+          "id": "item-1788970867082-0.24075079965188528",
+          "SKU": "HDW-013",
+          "Item": "1x10 self-thread screws",
+          "Unit": "each",
+          "Qty": 20,
+          "Price": 0.2,
+          "category": "10. Hardware & Consumables"
+        },
+        {
+          "id": "item-1788970875497-0.16001784711093625",
+          "SKU": "HDW-026",
+          "Item": "Green rawl plugs",
+          "Unit": "each",
+          "Qty": 20,
+          "Price": 0.15,
+          "category": "10. Hardware & Consumables"
+        },
+        {
+          "id": "item-1788971552669-0.3869351280414489",
+          "SKU": "CON-034",
+          "Item": "2x2 PVC Trunking - M.E.",
+          "Unit": "each",
+          "Qty": 4,
+          "Price": 43.5,
+          "category": "7. Conduit & Raceway"
+        }
+      ],
+      "tmpItems": [
+        {
+          "id": "custom-1788971956600",
+          "SKU": "TMP-010",
+          "Item": "60A Double-Pole Breaker",
+          "Unit": "each",
+          "Qty": 1,
+          "Price": 135,
+          "isCustom": true
+        }
+      ]
+    }
+  ],
+  "labourConfig": {
+    "labourCost": 0,
+    "inspectionCost": 0,
+    "hourlyRate": 65,
+    "estimatedHours": 0,
+    "crewSize": 1,
+    "transportCost": 0
+  },
+  "markupPct": 15,
+  "vatPct": 12.5,
+  "createdAt": "2026-09-09T16:10:59.842Z",
+  "updatedAt": "2026-09-09T16:39:41.324Z"
+}
