@@ -6,7 +6,7 @@
   "address": "Roystonia",
   "date": "2026-09-09",
   "validUntil": "2026-10-09",
-  "status": "draft",
+  "status": "sent",
   "scopeDescription": "To run the power to a battery charger.\nTo replace 2 - 50A d/p full size breakers with 50A - d/p half-size breakers.\nTo replace 1 - 30A full size breaker with a 30A half-size breaker.\nTo install 1 - 60A d/p full-size breaker.",
   "internalNotes": "",
   "sections": [
@@ -84,15 +84,15 @@
     }
   ],
   "labourConfig": {
-    "labourCost": 0,
+    "labourCost": 1200,
     "inspectionCost": 0,
     "hourlyRate": 65,
-    "estimatedHours": 0,
+    "estimatedHours": 8,
     "crewSize": 1,
     "transportCost": 0
   },
   "markupPct": 15,
   "vatPct": 12.5,
   "createdAt": "2026-09-09T16:10:59.842Z",
-  "updatedAt": "2026-09-09T16:39:41.324Z"
+  "updatedAt": "2026-09-09T17:21:20.641Z"
 }
