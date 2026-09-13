@@ -39,7 +39,7 @@
             "SKU": "BOX-021",
             "Item": "4x4 PVC blank cover",
             "Unit": "each",
-            "Qty": 1,
+            "Qty": 2,
             "Price": 2.95,
             "category": "8. Boxes & Enclosures"
           },
@@ -275,7 +275,7 @@
     "markupPct": 15,
     "vatPct": 12.5,
     "createdAt": "2026-09-13T16:39:16.332Z",
-    "updatedAt": "2026-09-13T16:51:07.841Z"
+    "updatedAt": "2026-09-13T17:01:46.283Z"
   },
   {
     "id": "quote-1787586835366",
