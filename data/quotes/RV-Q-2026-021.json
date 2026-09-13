@@ -264,15 +264,15 @@
     }
   ],
   "labourConfig": {
-    "labourCost": 0,
+    "labourCost": 1500,
     "inspectionCost": 0,
     "hourlyRate": 65,
-    "estimatedHours": 0,
-    "crewSize": 1,
+    "estimatedHours": 8,
+    "crewSize": 2,
     "transportCost": 0
   },
   "markupPct": 15,
   "vatPct": 12.5,
   "createdAt": "2026-09-13T16:39:16.332Z",
-  "updatedAt": "2026-09-13T16:49:09.885Z"
+  "updatedAt": "2026-09-13T16:49:40.419Z"
 }
