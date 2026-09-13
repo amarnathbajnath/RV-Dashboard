@@ -7,7 +7,7 @@
     "address": "#105 Freeport Mission Road, Freeport.",
     "date": "2026-09-07",
     "validUntil": "2026-10-13",
-    "status": "draft",
+    "status": "completed",
     "scopeDescription": "Electrical Installation  \n·\tTo install an electrical supply from the existing distribution panel to provide power for the  oxygen pump.\n·\tTo install an Isolator to power up the equipment.\n·\tTo install the cable from the panel to the isolator.\n\nTermination & Connection\n·\tTo install 2 - 30A double-pole breaker to accommodate the new electrical supply.\n·\tTerminate conductors for the breakers at the distribution panel and isolator.\n",
     "internalNotes": "Project: Electrical Works – Oxygen Pump (Enterprise)\n",
     "sections": [
@@ -265,17 +265,17 @@
       }
     ],
     "labourConfig": {
-      "labourCost": 0,
+      "labourCost": 1500,
       "inspectionCost": 0,
       "hourlyRate": 65,
-      "estimatedHours": 0,
-      "crewSize": 1,
+      "estimatedHours": 8,
+      "crewSize": 2,
       "transportCost": 0
     },
     "markupPct": 15,
     "vatPct": 12.5,
     "createdAt": "2026-09-13T16:39:16.332Z",
-    "updatedAt": "2026-09-13T16:49:09.885Z"
+    "updatedAt": "2026-09-13T16:51:07.841Z"
   },
   {
     "id": "quote-1787586835366",
