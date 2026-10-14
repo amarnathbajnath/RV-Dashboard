@@ -29,7 +29,7 @@
           "SKU": "WIR-012",
           "Item": "6.0mm² s/s wire",
           "Unit": "roll",
-          "Qty": 46,
+          "Qty": 0.46,
           "Price": 850,
           "category": "4. Building Wires & Grounding Cables"
         },
@@ -57,5 +57,5 @@
   "markupPct": 15,
   "vatPct": 12.5,
   "createdAt": "2026-10-14T18:48:57.458Z",
-  "updatedAt": "2026-10-14T18:50:51.272Z"
+  "updatedAt": "2026-10-14T18:51:36.564Z"
 }
