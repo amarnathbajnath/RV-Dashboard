@@ -1,0 +1,61 @@
+{
+  "id": "quote-1792003737458",
+  "quoteNo": "RV-Q-2026-10-14-03",
+  "customer": "Michael Mitchell",
+  "clientCompany": "Michael Mitchell",
+  "address": "Rea Marie Street, Preysal Village, Couva",
+  "date": "2026-10-14",
+  "validUntil": "2026-11-13",
+  "status": "draft",
+  "scopeDescription": "3. Temporary Supply for Apartment #1\n\n•  Ran temporary supply using 6.0mm² cable, properly taped and secured, to power the common service panel.\n•  Terminated wiring in both panels.\n•  Powered up and tested all circuits to ensure proper operation before departure.",
+  "internalNotes": "",
+  "sections": [
+    {
+      "id": "sec-1792003737458",
+      "title": "General Materials",
+      "scope": "",
+      "materials": [
+        {
+          "id": "item-1792003806363-0.3755791568055462",
+          "SKU": "DST-048",
+          "Item": "40A double-pole breaker (1/2)",
+          "Unit": "each",
+          "Qty": 1,
+          "Price": 101,
+          "category": "2. Distribution Equipment"
+        },
+        {
+          "id": "item-1792003839334-0.6615090065483119",
+          "SKU": "WIR-012",
+          "Item": "6.0mm² s/s wire",
+          "Unit": "roll",
+          "Qty": 46,
+          "Price": 850,
+          "category": "4. Building Wires & Grounding Cables"
+        },
+        {
+          "id": "item-1792003851272-0.44103855248442947",
+          "SKU": "HDW-025",
+          "Item": "Electrical Tape",
+          "Unit": "roll",
+          "Qty": 4,
+          "Price": 8.5,
+          "category": "10. Hardware & Consumables"
+        }
+      ],
+      "tmpItems": []
+    }
+  ],
+  "labourConfig": {
+    "labourCost": 0,
+    "inspectionCost": 0,
+    "hourlyRate": 65,
+    "estimatedHours": 0,
+    "crewSize": 1,
+    "transportCost": 0
+  },
+  "markupPct": 15,
+  "vatPct": 12.5,
+  "createdAt": "2026-10-14T18:48:57.458Z",
+  "updatedAt": "2026-10-14T18:50:51.272Z"
+}
