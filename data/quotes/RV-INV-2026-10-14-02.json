@@ -1,0 +1,251 @@
+{
+  "id": "quote-1792002894956",
+  "quoteNo": "RV-INV-2026-10-14-02",
+  "customer": "Michael Mitchell",
+  "clientCompany": "Michael Mitchell",
+  "address": "Rea Marie Street, Preysal Village, Couva",
+  "date": "2026-10-14",
+  "validUntil": "2026-11-13",
+  "status": "completed",
+  "scopeDescription": "2. Lighting & Outlets Installation\n\n•  Cored opening through floor slab (upstairs to downstairs) for conduit run.\n•  Installed 2\" x 4\" boxes for outlets, switches, and pull boxes as required.\n•  Ran conduit to link all outlet and switch boxes; conduit secured with clamps.\n•  Pulled wiring, completed terminations, and installed outlets.\n•  Ran and secured ECC cable in ceiling for walkway down-lighters.\n•  Installed photocell sensor and holder, and switch for lighting.\n•  Installed two (2) duplex receptacles for camera and internet.\n•  Installed two (2) pull boxes for internet/data.\n•  All electrical supply's were taken from the common service panel located downstairs.\n\n3. Temporary Supply for Apartment #1\n\n•  Ran temporary supply using 6.0mm² cable, properly taped and secured, to power the common service panel.\n•  Terminated wiring in both panels.\n•  Powered up and tested all circuits to ensure proper operation before departure.",
+  "internalNotes": "",
+  "sections": [
+    {
+      "id": "sec-1792002894956",
+      "title": "General Materials",
+      "scope": "",
+      "materials": [
+        {
+          "id": "item-1792002936005-0.2750210079383154",
+          "SKU": "CON-010",
+          "Item": "1/2\" PVC conduit",
+          "Unit": "length",
+          "Qty": 9,
+          "Price": 5.75,
+          "category": "7. Conduit & Raceway"
+        },
+        {
+          "id": "item-1792002947391-0.5966057819481119",
+          "SKU": "CON-007",
+          "Item": "1/2\" PVC couplings",
+          "Unit": "each",
+          "Qty": 13,
+          "Price": 0.35,
+          "category": "7. Conduit & Raceway"
+        },
+        {
+          "id": "item-1792002956389-0.28940387726793426",
+          "SKU": "CON-011",
+          "Item": "1/2\" PVC ends",
+          "Unit": "each",
+          "Qty": 13,
+          "Price": 0.58,
+          "category": "7. Conduit & Raceway"
+        },
+        {
+          "id": "item-1792002967548-0.5725832581546754",
+          "SKU": "BOX-033",
+          "Item": "2x4 weather proof box",
+          "Unit": "each",
+          "Qty": 1,
+          "Price": 19.95,
+          "category": "8. Boxes & Enclosures"
+        },
+        {
+          "id": "item-1792002973981-0.9211722060112449",
+          "SKU": "BOX-004",
+          "Item": "2x4 PVC blank cover",
+          "Unit": "each",
+          "Qty": 7,
+          "Price": 2.95,
+          "category": "8. Boxes & Enclosures"
+        },
+        {
+          "id": "item-1792002991554-0.45885990226761486",
+          "SKU": "BOX-005",
+          "Item": "2x4 PVC cans",
+          "Unit": "each",
+          "Qty": 6,
+          "Price": 2.95,
+          "category": "8. Boxes & Enclosures"
+        },
+        {
+          "id": "item-1792003026676-0.7321931807325477",
+          "SKU": "DEV-008",
+          "Item": "115V Duplex Plug outlet",
+          "Unit": "each",
+          "Qty": 2,
+          "Price": 5.95,
+          "category": "9. Wiring Devices"
+        },
+        {
+          "id": "item-1792003055810-0.2858396983082271",
+          "SKU": "DEV-007",
+          "Item": "115V Duplex plug cover",
+          "Unit": "each",
+          "Qty": 2,
+          "Price": 1.9,
+          "category": "9. Wiring Devices"
+        },
+        {
+          "id": "item-1792003072204-0.3860610431322714",
+          "SKU": "DEV-004",
+          "Item": "1-Way switches (Vimar)",
+          "Unit": "each",
+          "Qty": 1,
+          "Price": 13.95,
+          "category": "9. Wiring Devices"
+        },
+        {
+          "id": "item-1792003084933-0.418515812239741",
+          "SKU": "DEV-002",
+          "Item": "1-gang switch plates (Vimar)",
+          "Unit": "each",
+          "Qty": 1,
+          "Price": 8.95,
+          "category": "9. Wiring Devices"
+        },
+        {
+          "id": "item-1792003092623-0.8314033992578291",
+          "SKU": "DEV-040",
+          "Item": "Switch plate backing (Vimar)",
+          "Unit": "each",
+          "Qty": 1,
+          "Price": 5.95,
+          "category": "9. Wiring Devices"
+        },
+        {
+          "id": "item-1792003100985-0.05830708043369193",
+          "SKU": "HDW-026",
+          "Item": "Green rawl plugs",
+          "Unit": "each",
+          "Qty": 10,
+          "Price": 0.15,
+          "category": "10. Hardware & Consumables"
+        },
+        {
+          "id": "item-1792003105897-0.8109336726298012",
+          "SKU": "HDW-013",
+          "Item": "1x10 self-thread screws",
+          "Unit": "each",
+          "Qty": 10,
+          "Price": 0.2,
+          "category": "10. Hardware & Consumables"
+        },
+        {
+          "id": "item-1792003121172-0.9994359441987088",
+          "SKU": "CON-008",
+          "Item": "1/2\" EMT clamps",
+          "Unit": "each",
+          "Qty": 40,
+          "Price": 0.3,
+          "category": "7. Conduit & Raceway"
+        },
+        {
+          "id": "item-1792003147750-0.10169550058589194",
+          "SKU": "HDW-030",
+          "Item": "Nail Gun shots",
+          "Unit": "pack",
+          "Qty": 0.2,
+          "Price": 48,
+          "category": "10. Hardware & Consumables"
+        },
+        {
+          "id": "item-1792003167056-0.13592375133149892",
+          "SKU": "HDW-011",
+          "Item": "1\" purlin screws",
+          "Unit": "each",
+          "Qty": 30,
+          "Price": 0.45,
+          "category": "10. Hardware & Consumables"
+        },
+        {
+          "id": "item-1792003264022-0.22966895570222634",
+          "SKU": "WIR-001",
+          "Item": "1.5mm² ECC wire",
+          "Unit": "roll",
+          "Qty": 0.5,
+          "Price": 562,
+          "category": "4. Building Wires & Grounding Cables"
+        },
+        {
+          "id": "item-1792003304859-0.9611100738809522",
+          "SKU": "WIR-002",
+          "Item": "1.5mm² s/s wire",
+          "Unit": "roll",
+          "Qty": 0.55,
+          "Price": 214,
+          "category": "4. Building Wires & Grounding Cables"
+        },
+        {
+          "id": "item-1792003334556-0.2925814128421167",
+          "SKU": "WIR-020",
+          "Item": "2.5mm² s/s wire - M.E.",
+          "Unit": "roll",
+          "Qty": 0.83,
+          "Price": 360,
+          "category": "4. Building Wires & Grounding Cables"
+        },
+        {
+          "id": "item-1792003347027-0.6592472495230534",
+          "SKU": "DST-015",
+          "Item": "15A single-pole breaker",
+          "Unit": "each",
+          "Qty": 1,
+          "Price": 37,
+          "category": "2. Distribution Equipment"
+        },
+        {
+          "id": "item-1792003355941-0.2057381146575984",
+          "SKU": "DST-031",
+          "Item": "20A single-pole breaker",
+          "Unit": "each",
+          "Qty": 1,
+          "Price": 37,
+          "category": "2. Distribution Equipment"
+        },
+        {
+          "id": "item-1792003364626-0.6478676019091916",
+          "SKU": "TRM-014",
+          "Item": "Yellow connectors",
+          "Unit": "each",
+          "Qty": 20,
+          "Price": 0.35,
+          "category": "6. Terminations & Connectors"
+        }
+      ],
+      "tmpItems": [
+        {
+          "id": "custom-1792003203303",
+          "SKU": "TMP-026",
+          "Item": "Photocell and holder",
+          "Unit": "each",
+          "Qty": 1,
+          "Price": 110,
+          "isCustom": true
+        },
+        {
+          "id": "custom-1792003246354",
+          "SKU": "TMP-028",
+          "Item": "1 1/2\" gypsum screws",
+          "Unit": "each",
+          "Qty": 30,
+          "Price": 0.2,
+          "isCustom": true
+        }
+      ]
+    }
+  ],
+  "labourConfig": {
+    "labourCost": 0,
+    "inspectionCost": 0,
+    "hourlyRate": 65,
+    "estimatedHours": 0,
+    "crewSize": 1,
+    "transportCost": 0
+  },
+  "markupPct": 15,
+  "vatPct": 12.5,
+  "createdAt": "2026-10-14T18:34:54.956Z",
+  "updatedAt": "2026-10-14T18:43:25.777Z"
+}
