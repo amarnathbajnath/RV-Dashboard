@@ -1,0 +1,33 @@
+{
+  "id": "quote-1792002129746",
+  "quoteNo": "QT-2026-004",
+  "customer": "",
+  "clientCompany": "",
+  "address": "",
+  "date": "2026-10-14",
+  "validUntil": "2026-11-13",
+  "status": "draft",
+  "scopeDescription": "",
+  "internalNotes": "",
+  "sections": [
+    {
+      "id": "sec-1792002129746",
+      "title": "General Materials",
+      "scope": "",
+      "materials": [],
+      "tmpItems": []
+    }
+  ],
+  "labourConfig": {
+    "labourCost": 0,
+    "inspectionCost": 0,
+    "hourlyRate": 65,
+    "estimatedHours": 0,
+    "crewSize": 1,
+    "transportCost": 0
+  },
+  "markupPct": 15,
+  "vatPct": 12.5,
+  "createdAt": "2026-10-14T18:22:09.746Z",
+  "updatedAt": "2026-10-14T18:22:09.746Z"
+}
