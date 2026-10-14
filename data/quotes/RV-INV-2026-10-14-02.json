@@ -7,7 +7,7 @@
   "date": "2026-10-14",
   "validUntil": "2026-11-13",
   "status": "completed",
-  "scopeDescription": "2. Lighting & Outlets Installation\n\n•  Cored opening through floor slab (upstairs to downstairs) for conduit run.\n•  Installed 2\" x 4\" boxes for outlets, switches, and pull boxes as required.\n•  Ran conduit to link all outlet and switch boxes; conduit secured with clamps.\n•  Pulled wiring, completed terminations, and installed outlets.\n•  Ran and secured ECC cable in ceiling for walkway down-lighters.\n•  Installed photocell sensor and holder, and switch for lighting.\n•  Installed two (2) duplex receptacles for camera and internet.\n•  Installed two (2) pull boxes for internet/data.\n•  All electrical supply's were taken from the common service panel located downstairs.\n\n3. Temporary Supply for Apartment #1\n\n•  Ran temporary supply using 6.0mm² cable, properly taped and secured, to power the common service panel.\n•  Terminated wiring in both panels.\n•  Powered up and tested all circuits to ensure proper operation before departure.",
+  "scopeDescription": "2. Lighting & Outlets Installation\n\n•  Cored opening through floor slab (upstairs to downstairs) for conduit run.\n•  Installed 2\" x 4\" boxes for outlets, switches, and pull boxes as required.\n•  Ran conduit to link all outlet and switch boxes; conduit secured with clamps.\n•  Pulled wiring, completed terminations, and installed outlets.\n•  Ran and secured ECC cable in ceiling for walkway down-lighters.\n•  Installed photocell sensor and holder, and switch for lighting.\n•  Installed two (2) duplex receptacles for camera and internet.\n•  Installed two (2) pull boxes for internet/data.\n•  All electrical supply's were taken from the common service panel located downstairs.\n\n",
   "internalNotes": "",
   "sections": [
     {
@@ -247,5 +247,5 @@
   "markupPct": 15,
   "vatPct": 12.5,
   "createdAt": "2026-10-14T18:34:54.956Z",
-  "updatedAt": "2026-10-14T18:43:25.777Z"
+  "updatedAt": "2026-10-14T18:49:34.844Z"
 }
