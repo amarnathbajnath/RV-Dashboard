@@ -1,0 +1,106 @@
+{
+  "id": "quote-1792002208123",
+  "quoteNo": "RV-INV-2026-10-14-01",
+  "customer": "Michael Mitchell",
+  "clientCompany": "Michael Mitchell",
+  "address": "Rea Marie Street, Preysal Village, Couva",
+  "date": "2026-10-14",
+  "validUntil": "2026-11-13",
+  "status": "completed",
+  "scopeDescription": "Work Completed - Gate Supply, Lighting & Outlets Installation\n\n1. Gate Motor Supply\n\n•  Cut and chiseled concrete to form trench.\n•  Excavated trench from electrical panel to gate motor location.\n•  Installed conduit from panel to gate motor.\n•  Mounted weatherproof junction box for gate motor supply.\n•  Installed and terminated required wiring at panel and gate motor.\n\n\n",
+  "internalNotes": "T&TEC CA # - 1333/25",
+  "sections": [
+    {
+      "id": "sec-1792002208123",
+      "title": "Installation & Materials",
+      "scope": "Electrical distribution works for Michael Mitchell.",
+      "materials": [
+        {
+          "id": "item-1792002572035-0.5455028068224632",
+          "SKU": "CON-017",
+          "Item": "3/4\" PVC conduit",
+          "Unit": "length",
+          "Qty": 4,
+          "Price": 7.95,
+          "category": "7. Conduit & Raceway"
+        },
+        {
+          "id": "item-1792002595034-0.11960008351983797",
+          "SKU": "CON-018",
+          "Item": "3/4\" PVC couplings",
+          "Unit": "each",
+          "Qty": 6,
+          "Price": 0.5,
+          "category": "7. Conduit & Raceway"
+        },
+        {
+          "id": "item-1792002607001-0.8370726460346665",
+          "SKU": "CON-019",
+          "Item": "3/4\" PVC ends",
+          "Unit": "each",
+          "Qty": 2,
+          "Price": 0.85,
+          "category": "7. Conduit & Raceway"
+        },
+        {
+          "id": "item-1792002624490-0.10616801708877088",
+          "SKU": "CON-015",
+          "Item": "3/4\" EMT clamps",
+          "Unit": "each",
+          "Qty": 3,
+          "Price": 0.45,
+          "category": "7. Conduit & Raceway"
+        },
+        {
+          "id": "item-1792002635901-0.3037978747234894",
+          "SKU": "BOX-034",
+          "Item": "4x4 weather proof box",
+          "Unit": "each",
+          "Qty": 1,
+          "Price": 29.95,
+          "category": "8. Boxes & Enclosures"
+        },
+        {
+          "id": "item-1792002642366-0.9646970823535428",
+          "SKU": "BOX-021",
+          "Item": "4x4 PVC blank cover",
+          "Unit": "each",
+          "Qty": 1,
+          "Price": 2.95,
+          "category": "8. Boxes & Enclosures"
+        },
+        {
+          "id": "item-1792002728081-0.4257170143630675",
+          "SKU": "WIR-018",
+          "Item": "4.0mm² s/s wire - V.E.",
+          "Unit": "roll",
+          "Qty": 0.5,
+          "Price": 545.39,
+          "category": "4. Building Wires & Grounding Cables"
+        },
+        {
+          "id": "item-1792002743612-0.6976435367173754",
+          "SKU": "DST-031",
+          "Item": "20A single-pole breaker",
+          "Unit": "each",
+          "Qty": 1,
+          "Price": 37,
+          "category": "2. Distribution Equipment"
+        }
+      ],
+      "tmpItems": []
+    }
+  ],
+  "labourConfig": {
+    "labourCost": 500,
+    "inspectionCost": 0,
+    "hourlyRate": 65,
+    "estimatedHours": 8,
+    "crewSize": 2,
+    "transportCost": 0
+  },
+  "markupPct": 15,
+  "vatPct": 12.5,
+  "createdAt": "2026-10-14T18:23:28.123Z",
+  "updatedAt": "2026-10-14T18:43:42.957Z"
+}
