@@ -1,0 +1,61 @@
+{
+  "id": "quote-1792002129746",
+  "quoteNo": "RV-Q-2026-10-20",
+  "customer": "Yagdesh Ramlogan",
+  "clientCompany": "",
+  "address": "LP 51  Persad Drive, off Datta Drive, Orangefield Road, Carapichaima",
+  "date": "2026-10-20",
+  "validUntil": "2026-11-13",
+  "status": "draft",
+  "scopeDescription": "1. Site Preparation\n• Break up and remove existing concrete to reroute cable to new pole location.\n2. Pole Installation\n• Dig a 4-foot deep hole for the installation of a 24-foot new pole.\n• To supply and install 1 - 24ft. x 5mm electrical pole.\n• Plant the new pole and cast a concrete base (approximately 18 inches) to secure the pole.\n3. Point of Entrance Cable Installation\n• We recommend that the point of entrance cable (cable from the pole to the meter base) be changed as it was noticed to be stripping/peeling.\n• To supply and install 7m - 3x50mm² PVC cable.\n• Secure cable to the new pole using hose clips.\n4. Meter Base Installation\n• To supply and install 1 - 200A single-phase meter base with reducer.\n5. Cable Rerouting\n• Reroute existing cable from the old meter base to the new pole location.\n6. Triplex Installation\n• Installation of new cable from the T&TEC pole to the house.\n7. Inspection and Certification\n• Perform a site inspection to ensure all work is completed to standard.\n• Obtain an Inspection Certificate to facilitate the issuance of a Completion Certificate.\n• Note: Because of the sensitive nature of the 1. Site Preparation\n• Break up and remove existing concrete to reroute cable to new pole location.\n2. Pole Installation\n• Dig a 4-foot deep hole for the installation of a 24-foot new pole.\n• To supply and install 1 - 24ft. x 5mm electrical pole.\n• Plant the new pole and cast a concrete base (approximately 18 inches) to secure the pole.\n3. Point of Entrance Cable Installation\n• We recommend that the point of entrance cable (cable from the pole to the meter base) be changed as it was noticed to be stripping/peeling.\n• To supply and install 7m - 3x50mm² PVC cable.\n• Secure cable to the new pole using hose clips.\n4. Meter Base Installation\n• To supply and install 1 - 200A single-phase meter base with reducer.\n5. Cable Rerouting\n• Reroute existing cable from the old meter base to the new pole location.\n6. Triplex Installation\n• Installation of new cable from the T&TEC pole to the house.\n7. Inspection and Certification\n• Perform a site inspection to ensure all work is completed to standard.\n• Obtain an Inspection Certificate to facilitate the issuance of a Completion Certificate.\n• Note: Because of the sensitive nature of the  job, we have to get all the various departments involved.\n",
+  "internalNotes": "",
+  "sections": [
+    {
+      "id": "sec-1792002129746",
+      "title": "General Materials",
+      "scope": "",
+      "materials": [
+        {
+          "id": "item-1793303163069-0.16263701595824376",
+          "SKU": "SRV-013",
+          "Item": "24ft. x 5mm Fabricated Electrical Steel Pole",
+          "Unit": "each",
+          "Qty": 1,
+          "Price": 1460,
+          "category": "1. Service Entrance & Utility"
+        },
+        {
+          "id": "item-1793303186529-0.9325166291423104",
+          "SKU": "SRV-009",
+          "Item": "200A 1-Phase Meter Base - Jumbo",
+          "Unit": "each",
+          "Qty": 1,
+          "Price": null,
+          "category": "1. Service Entrance & Utility"
+        },
+        {
+          "id": "item-1793303198268-0.2624528626782201",
+          "SKU": "SRV-017",
+          "Item": "4\" - 6\" Stainless Steel Hose Clamps",
+          "Unit": "each",
+          "Qty": 18,
+          "Price": 13,
+          "category": "1. Service Entrance & Utility"
+        }
+      ],
+      "tmpItems": []
+    }
+  ],
+  "labourConfig": {
+    "labourCost": 0,
+    "inspectionCost": 0,
+    "hourlyRate": 65,
+    "estimatedHours": 0,
+    "crewSize": 1,
+    "transportCost": 0
+  },
+  "markupPct": 31,
+  "vatPct": 12.5,
+  "createdAt": "2026-10-14T18:22:09.746Z",
+  "updatedAt": "2026-10-29T19:48:24.769Z"
+}
